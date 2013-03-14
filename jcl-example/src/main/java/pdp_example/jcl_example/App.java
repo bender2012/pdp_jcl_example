@@ -16,11 +16,10 @@ public class App {
 	public static void main(String[] args) {
 		logger.info(TEST_LOG_MESSAGE);
 		try {
-			FileHandler fhandler = new FileHandler("Logfile.txt");
-			SimpleFormatter sformatter = new SimpleFormatter();
-			fhandler.setFormatter(sformatter);
-			logger.addHandler(fhandler);
-
+			FileHandler fileHandler = new FileHandler("Logfile.txt");
+			SimpleFormatter simpleFormatter = new SimpleFormatter();
+			fileHandler.setFormatter(simpleFormatter);
+			logger.addHandler(fileHandler);
 		} catch (IOException ex) {
 			logger.log(Level.SEVERE, ex.getMessage(), ex);
 		} catch (SecurityException ex) {
